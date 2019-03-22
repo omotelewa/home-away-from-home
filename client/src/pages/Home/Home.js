@@ -4,7 +4,7 @@ import "./Home.css";
 const Home = () => (
   <div>
     <div className="parallax-container">
-      <div className="parallax"><img src="images/parallax1.jpg" /></div>
+      <div className="parallax"><img src="assets/images/Chamonix+banner+2.jpg" /></div>
     </div>
     <div className="section white">
       <div className="row container">
@@ -13,7 +13,7 @@ const Home = () => (
       </div>
     </div>
     <div className="parallax-container">
-      <div className="parallax"><img src="images/parallax2.jpg" /></div>
+      <div className="parallax"><img src="assets/images/royal-mirage-dubai1.jpg" /></div>
     </div>
   </div>
 
