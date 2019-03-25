@@ -9,7 +9,7 @@ import TextSection from './components/TextSection'
 import InvertedButton from './components/InvertedButton'
 import Typography from '@material-ui/core/Typography'
 
-const Admissions = ({ classes }) => (
+const Home = ({ classes }) => (
   <Layout>
     <Hero
       backgroundImg="https://cdn.pixabay.com/photo/2018/01/11/19/02/architecture-3076685_960_720.jpg"

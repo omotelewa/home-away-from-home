@@ -15,6 +15,6 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 mongoose.Promise = Promise;
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/reservations", {useNewUrlParser:true}); 
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/homeAwayFromHome", {useNewUrlParser:true}); 
 
 app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
