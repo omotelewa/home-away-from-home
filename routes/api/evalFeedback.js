@@ -1,12 +1,12 @@
 const db=require("../models");
 module.exports = {
   //select all users
-  getAllUser: (req, res) => {
+  getAllUsers: (req, res) => {
     db
       .Users
       .findAll()
-      .then(dbPatrons => {
-        res.json(dbPatrons);
+      .then(dbUsers => {
+        res.json(dbUsers);
 
       })
       .catch(err => {
@@ -15,17 +15,17 @@ module.exports = {
       });
   },
   //select a user activities
-  getdbUsersActivities: (req, res) => {
+  getUserActivities: (req, res) => {
     db
       .Users
       .findAll({
         where: {
           id: req.params.userId
         },
-        include: [db.user,db.property,db.listingInfo,db.reservations]
+        include: [db.Reviews,db.Comments,db.Photos]
       })
-      .then(dbuser => {
-        res.json(dbuser);
+      .then(dbUsers => {
+        res.json(dbUsers);
 
       })
       .catch(err => {
@@ -34,17 +34,17 @@ module.exports = {
       });
   },
   //check if user is logged in
-  UserCheck: function (req, res) {
-    if (req.patron) {
-      console.log(req.patron);
-      return res.json(req.patron);
+  userCheck: function (req, res) {
+    if (req.user) {
+      console.log(req.user);
+      return res.json(req.user);
     } else {
       return res.status(422).json({
         error: "Not logged in!"
       })
     }
   },
-  //add a patron where we will make use of 
+  //add a user where we will make use of all passport and others sh*t
   register: function (req, res) {
     db
       .Users

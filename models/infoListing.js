@@ -1,26 +1,23 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const amenitiesSchema = new Schema({
-   propertyId: {
+const infoListingSchema = new Schema({
+  userId: {
     type: Number, required: true
+  },
+  listing: {
+    type: String, required: true
+  },
+  owner: {
+    type: String, required: true
   },
   location: {
     type: String, required: true
   },
-  Pool: {
-    type: String, required: true
-  },
-  TennisCourts: {
-    type: String, required: true
-  },
-  Boatlift: {
-    type: String, required: true
-  },
-  SquashCourt: {
+  description: {
     type: String, required: true
   }
 });
 
-const Amenities = mongoose.model("Amenities", amenitiesSchema);
-module.exports = Amenities;
+const InfoListing = mongoose.model("Infolisting", infoListingSchema);
+module.exports = infoListing;

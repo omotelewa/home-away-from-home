@@ -15,33 +15,25 @@ import Typography from '@material-ui/core/Typography'
     <Grid container className={classes.contentContainer}>
       <Grid item xs={12} sm={4} md={4} lg={4}>
         <Typography>
-          Where are you going? Who do you want to be? How do you want to serve?
-          Those are real questions, with real answers—answers that will shape
-          your future and the future of the world in which you live.
+          Where are you going?  What Type of accomodation do you like when you vacation.
         </Typography>
       </Grid>
       <Grid item xs={12} sm={4} md={4} lg={4}>
         <Typography>
-          Do you want to grow in mind, body, and spirit? Do you want to expand
-          your intellectual horizons or take the next step in your career? Do
-          you want to serve God and your fellow man in a new way?
+          Your Business is Our Business, Making your Stay Fun!
         </Typography>
       </Grid>
       <Grid item xs={12} sm={4} md={4} lg={4}>
         <Typography>
-          Learning is always personal. Whether it takes place in a classroom or
-          “the cloud,” education is about people: your teachers, your
-          classmates, and you. It’s about your shared desire to grow in
-          knowledge, discover truth, and help one another better serve God and
-          others in the world.
+          We Have short terms stays for 2 Nights and 3 Days and Long Term Stays for a Maximum of Up to Two Weeks on a single booking!   Guests cannot stay longer than 14 Days per rental.
         </Typography>
       </Grid>
     </Grid>
 
     <TextSection
-      sectionTitle="Our mission as a Franciscan and Catholic university that embraces the call to dynamic orthodoxy is to educate, to evangelize, and to send forth joyful disciples."
+      sectionTitle="Home Away From Home, Our Business is to Make You Feel At Home Away From Home."
       bgColor="#21412a"
       textColor="#fff"
       borderColor="#998643"
     />
-    
+  

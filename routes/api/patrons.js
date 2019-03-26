@@ -1,16 +1,16 @@
 const router = require("express").Router();
-const patronsController = require("../../controllers/patronController");
-const cloudinaryMiddleware = require('../../utils/middleware/patronCloudinary');
+const userController = require("../../controllers/userController");
+const cloudinaryMiddleware = require('../../utils/middleware/user------');
 const passport = require('../../utils/middleware/passport-local');
 
-//method to handle patrons authentication login status and logout
+//method to handle user authentication login status and logout
 router
   .route("/status")
-  .get(patronController.patronCheck);
+  .get(userController.userCheck);
 
 router
   .route("/login")
-  .post(passport.authenticate('local'), patronController.login);
+  .post(passport.authenticate('local'), userController.login);
 
 router
   .route("/logout")
@@ -19,22 +19,22 @@ router
     res.redirect('/');
   });
 
-// methods for /api/patron (GET and POST) 
+// methods for /api/user (GET and POST) 
 router
   .route("/")
-  .get(patronsController.getAllPatrons)
-  .post(patronsController.register);
+  .get(userController.getAllUsers)
+  .post(userController.register);
 
-//methods for api/patrons/:id (PUT and DELETE)
+//methods for api/users/:id (PUT and DELETE)
 router
   .route("/:id")
-  .get(patronsController.getPatronsActivities)
-  .put(cloudinaryMiddleware,patronsController.updateAccount)
-  .delete(patronsController.deletePatron);
+  .get(userController.getUserActivities)
+  .put(userController.updateAccount)
+  .delete(userController.deleteUser);
 
-//method to change patrons password
+//method to change user password
   router
   .route("/changePassword/:id")
-  .put(cloudinaryMiddleware,patronsController.changePassword)
+  .put(Middleware,userController.changePassword)
 
 module.exports = router;
