@@ -2,19 +2,22 @@ import React from "react";
 import "./Home.css";
 
 const Home = () => (
-  <div>
-    <div className="parallax-container">
-      <div className="parallax"><img src="assets/images/Chamonix+banner+2.jpg" /></div>
-    </div>
+  <div className="homeDiv">
+      <div className="container">
+        <h1 className="header">Home Away From Home</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, corrupti quo repellendus alias deleniti nostrum accusamus nihil a! Non eos, quidem sequi necessitatibus eius nobis, excepturi unde repellendus quisquam odit aut dolorum ut assumenda? Fuga sint quae saepe cum quas minima aut numquam. Illum, recusandae beatae assumenda velit voluptas alias?</p>
+      </div>
+    <a href="/beach"><div className="top-image"></div></a>
+
     <div className="section white">
-      <div className="row container">
-        <h2 className="header">Parallax</h2>
-        <p className="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+      <div className="container">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, corrupti quo repellendus alias deleniti nostrum accusamus nihil a! Non eos, quidem sequi necessitatibus eius nobis, excepturi unde repellendus quisquam odit aut dolorum ut assumenda? Fuga sint quae saepe cum quas minima aut numquam. Illum, recusandae beatae assumenda velit voluptas alias?</p>
       </div>
     </div>
-    <div className="parallax-container">
-      <div className="parallax"><img src="assets/images/royal-mirage-dubai1.jpg" /></div>
-    </div>
+    <a href="/snow"><div className="bottom-image"></div></a>
+      <div className="container">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, corrupti quo repellendus alias deleniti nostrum accusamus nihil a! Non eos, quidem sequi necessitatibus eius nobis, excepturi unde repellendus quisquam odit aut dolorum ut assumenda? Fuga sint quae saepe cum quas minima aut numquam. Illum, recusandae beatae assumenda velit voluptas alias?</p>
+      </div>
   </div>
 
 )

@@ -1,13 +1,10 @@
-body {
-  background-image: url("/assets/images/escondido.jpg");
+.beachDiv {
+  padding: 10% 0 80% 0;
+  background-image: url("/assets/images/casa.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
   font-family: sans-serif;
-}
-
-body::-webkit-scrollbar {
-  width: 0 !important;
 }
 
 p {
@@ -16,23 +13,19 @@ p {
   opacity: .75;
   width: 60%;
   padding: 5%;
-  margin: 10% auto;
+  margin: 0 auto;
   box-shadow: 0px 0px 10px black;
 }
 
 h1 {
+  margin-bottom: 5%;
   font-family: cursive, sans-serif;
 }
 
-.homeDiv {
-  margin: 10% 0 70% 0;
-}
-
 .top-image {
-  margin: 10% auto 10% 5%;
+  margin: 5% auto 5% 5%;
   width: 50%;
   height: 40vh;
-  background-image: url("/assets/images/casa.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -65,7 +58,7 @@ h1 {
 }
 
 .bottom-image {
-  margin: 10% 5% 10% auto;
+  margin: 5% 5% 5% auto;
   width: 50%;
   height: 40vh;
   background-attachment: fixed;
