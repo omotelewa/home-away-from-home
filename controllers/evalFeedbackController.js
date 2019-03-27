@@ -5,7 +5,7 @@ module.exports = {
   //create a Evaluation Feedback
   createevalFeedback: (req, res) => {
     db
-      .evalFeedback
+      .EvalFeedback
       .create(req.body)
       .then(result => {
         res.json(result)
@@ -19,9 +19,10 @@ module.exports = {
   getAllEvalFeedback: (req, res) => {
     db
       .EvalFeedBack
-      .findAll({
-        include: [db.Property, db.Users]
+      .find({
+
       })
+
       .then(dbevalFeedback => {
         res.json(dbevalFeedback);
       })
@@ -30,15 +31,12 @@ module.exports = {
         res.status(400).json(err);
       });
   },
-  //select all comment by review
+  //select all comments by user
   getAllevalFeedbackByPatrons: (req, res) => {
     db
       .evalFeedback
-      .findAll({
-        where:{
-          PatronId:req.params.PropertyId
-        },
-        include: [db.Users]
+      .find({
+        userId: req.body.userId
       })
       .then(dbevalFeedback => {
         res.json(dbevalFeedback);
@@ -54,7 +52,7 @@ module.exports = {
       .EvalFeedBack
       .delete({
         where: {
-          id: req.params.id
+          userId: req.params.id
         }
       }).then(result => {
         res.json(result)

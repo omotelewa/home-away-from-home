@@ -4,7 +4,7 @@
 
 const router = require("express").Router();
 
-const evalFeedbackControllerRoutes = require("../../controllers/evalFeedbackController");
+const evalFeedbackRoutes = require("./evalFeedback");//mimic line 7 for the rest.
 const infoListingRoutes = require("../../controllers/infoListingController");
 const optionalServicesRoutes = require("../../controllers/optionalServicesController");
 const patronsRoutes = require("../../controllers/patronsController");
@@ -17,7 +17,7 @@ const usersRoutes = require("../../controllers/usersController");
 
 // prefix api routes with their specific endpoint name
 router.use("/users", userRoutes);
-router.use("/evalFeedback", evalFeedbackRoutes);
+router.use("/evalFeedback", evalFeedbackRoutes);//only correct so follow this smaple
 router.use("/infoListing", infoListingRoutes);
 router.use("/amenities", amenitiesRoutes);
 router.use("/property", propertyRoutes);
