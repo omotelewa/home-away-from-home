@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const userController = require("../../controllers/userController");
-const cloudinaryMiddleware = require('../../utils/middleware/user------');
 const passport = require('../../utils/middleware/passport-local');
 
 //method to handle user authentication login status and logout

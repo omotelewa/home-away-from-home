@@ -47,3 +47,6 @@ export const deleteUser = (req, res, next) => {
 		res.json(user);
 	});
 };
+
+
+
