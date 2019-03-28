@@ -12,6 +12,7 @@ import Typography from '@material-ui/core/Typography'
 
     
 
+
     <Grid container className={classes.contentContainer}>
       <Grid item xs={12} sm={4} md={4} lg={4}>
         <Typography>
@@ -30,10 +31,10 @@ import Typography from '@material-ui/core/Typography'
       </Grid>
     </Grid>
 
-    <TextSection
-      sectionTitle="Home Away From Home, Our Business is to Make You Feel At Home Away From Home."
-      bgColor="#21412a"
-      textColor="#fff"
-      borderColor="#998643"
-    />
+    // <TextSection
+    //   sectionTitle="Home Away From Home, Our Business is to Make You Feel At Home Away From Home."
+    //   bgColor="#21412a"
+    //   textColor="#fff"
+    //   borderColor="#998643"
+    // />
   

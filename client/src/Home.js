@@ -5,150 +5,64 @@ import React from 'react'
 import Hero from './components/Hero'
 import Layout from './components/Layout'
 import TextSection from './components/TextSection'
-//import withRoot from '../components/withRoot'
+import withRoot from '../components/withRoot'
 import InvertedButton from './components/InvertedButton'
 import Typography from '@material-ui/core/Typography'
 
-const Home = ({ classes }) => (
-  <Layout>
-    <Hero
-      backgroundImg="https://cdn.pixabay.com/photo/2018/01/11/19/02/architecture-3076685_960_720.jpg"
-      titleText="Great Rentals Home Away From Home Year Round"
-      subtitleText={
-        <span>Excellence In Service; Your Home Away From Home</span>
-      }
-      primaryBtnText="Reserve"
-      primaryBtnLink="#"
-      secondaryBtnText="Inquire"
-      secondaryBtnLink="#"
-      tertiaryBtnText="Visit"
-      tertiaryBtnLink="#"
-      minimumHeight="60vh"
-    />
-
-    <Grid container propertyName={property.contentContainer}>
-      <Grid item xs={12} sm={4} md={4} lg={4}>
-        <Typography>
-          Where are you going? How do you want to serve?
-          Those are real questions, with real answers—answers that will shape
-          your vacation for a lifetime.
-        </Typography>
-      </Grid>
-      <Grid item xs={12} sm={4} md={4} lg={4}>
-        <Typography>
-          Do you want to relax and enjoy your time then reserve with Home Away From Home.
-        </Typography>
-      </Grid>
-      <Grid item xs={12} sm={4} md={4} lg={4}>
-        <Typography>
-          Vacaioning is always personal. Whether it takes place in your city or
-          “the abroad,” vacation is about family: your time, your
-          friends, and you. It’s about your shared desire to have a restful vacation, so location matters.
-        </Typography>
-      </Grid>
-    </Grid>
-
-    <TextSection
-      sectionTitle="Our mission is to make sure all our residents have a memorable and unjoyable stay."
-      bgColor="#21412a"
-      textColor="#fff"
-      borderColor="#998643"
-    />
-    <Grid container propertyName={property.contentContainer}>
-      <Grid item propertyName={property.listGridItem} xs={12} sm={4} md={4} lg={4}>
-        <section>
-          <ul propertyName={property.list}>
-            <h3 propertyName={property.listHeader}>To Educate</h3>
-
-            <li propertyName={property.headerListItem}>
-              <Link prefetch="" href="" as="">
-                40 Majors
-              </Link>
-            </li>
-            <li propertyName={property.headerListItem}>
-              <Link prefetch="" href="" as="">
-              Amenities
-              </Link>
-            </li>
-          </ul>
-        </section>
-      </Grid>
-      <Grid item propertyName={property.listGridItem} xs={12} sm={4} md={4} lg={4}>
-        <section>
-          <ul propertyName={property.list}>
-            <h3 propertyName={property.listHeader}>To Evangelize</h3>
-
-            <li propertyName={property.headerListItem}>
-              <Link prefetch="" href="" as="">
-                Optional Services We Offer
-              </Link>
-            </li>
-            <li propertyName={property.headerListItem}>
-              <Link prefetch="" href="" as="">
-                Vacation Activities
-              </Link>
-            </li>
-            <li propertyName={property.headerListItem}>
-              <Link prefetch="" href="" as="">
-                Recreation
-              </Link>
-            </li>
-          </ul>
-        </section>
-      </Grid>
-      <Grid item propertyName={property.listGridItem} xs={12} sm={4} md={4} lg={4}>
-        <section>
-          <ul propertyName={property.list}>
-            <h3 propertyName={property.listHeader}>To Send Forth</h3>
-
-            <li propertyName={property.headerListItem}>
-              
-            </li>
-            <li propertyName={property.headerListItem}>
-              <Link prefetch="" href="" as="">
-                Renters Profiles
-              </Link>
-            </li>
-          </ul>
-        </section>
-      </Grid>
-    </Grid>
-    <div propertyName={property.section}>
-      <div propertyName={property.innerContainer}>
-        <Typography variant="display2" gutterBottom>
-          Cost without Optional Services
-        </Typography>
-
-        <Typography
-          className={property.sectionText}
-          variant="body1"
-          gutterBottom
-        >
-         
-        </Typography>
-        <Typography
-          propertyName={property.sectionText}
-          variant="body1"
-          gutterBottom
-        >
-         
-        </Typography>
-        <Grid item className={property.heroBtn} xs={12}>
-          <InvertedButton
-            hrref="#"
-            title="Price Calculator"
-            propertyName={propety.invertedBtn}
-            color="secondary"
-            style={{ width: '192px' }}
-          >
-            Calculate Cost
-          </InvertedButton>
+export const Home = () =>{
+  return(
+    <div>
+      <Layout>
+      <Hero
+        backgroundImg="https://cdn.pixabay.com/photo/2018/01/11/19/02/architecture-3076685_960_720.jpg"
+        titleText="Great Rentals Home Away From Home Year Round"
+        subtitleText={
+          <span>Excellence In Service; Your Home Away From Home</span>
+        }
+        primaryBtnText="Reserve"
+        primaryBtnLink="#"
+        secondaryBtnText="Inquire"
+        secondaryBtnLink="#"
+        tertiaryBtnText="Visit"
+        tertiaryBtnLink="#"
+        minimumHeight="60vh"
+      />
+  
+      <Grid container>
+        <Grid item xs={12} sm={4} md={4} lg={4}>
+          <Typography>
+            Where are you going? How do you want to serve?
+            Those are real questions, with real answers—answers that will shape
+            your vacation for a lifetime.
+          </Typography>
         </Grid>
-      </div>
+        <Grid item xs={12} sm={4} md={4} lg={4}>
+          <Typography>
+            Do you want to relax and enjoy your time then reserve with Home Away From Home.
+          </Typography>
+        </Grid>
+        <Grid item xs={12} sm={4} md={4} lg={4}>
+          <Typography>
+            Vacationing is always personal. Whether it takes place in your city or
+            “the abroad,” vacation is about family: your time, your
+            friends, and you. It’s about your shared desire to have a restful vacation, so location matters.
+          </Typography>
+        </Grid>
+      </Grid>
+  
+      { <TextSection
+        sectionTitle="Our mission is to make sure all our residents have a memorable and unjoyable stay."
+        bgColor="#21412a"
+        textColor="#fff"
+        borderColor="#998643"
+      /> }
+            
+    </Layout>
+
+  
     </div>
-    {}
-  </Layout>
-)
+      
+  )}
 
 const styles = theme => ({
   white: {
@@ -273,4 +187,4 @@ const styles = theme => ({
 })
 
 
-export default withRoot(withStyles(styles)(Stays))
+//export default withRoot(withStyles(styles))
