@@ -3,27 +3,28 @@
 
 
 const router = require("express").Router();
+const evalFeedbackRoutes = require("../../controllers/evalFeedbackController");
 
-const evalFeedbackRoutes = require("./evalFeedback");//mimic line 7 for the rest.
-const infoListingRoutes = require("../../controllers/infoListingController");
-const optionalServicesRoutes = require("../../controllers/optionalServicesController");
-const patronsRoutes = require("../../controllers/patronsController");
-const propertyRoutes = require("../../controllers/propertyController");
-const registrationRoutes = require("../../controllers/registrationController");
-const reservationsRoutes = require("../../controllers/reservationsController");
-const amenitiesRoutes = require("../../controllers/amenitiesController");
-const usersRoutes = require("../../controllers/usersController");
+router.use('/eval', evalFeedbackRoutes);
+// const infoListingRoutes = require("../../controllers/infoListingController");
+// const optionalServicesRoutes = require("../../controllers/optionalServicesController");
+// const patronsRoutes = require("../../controllers/patronsController");
+// const propertyRoutes = require("../../controllers/propertyController");
+// const registrationRoutes = require("../../controllers/registrationController");
+// const reservationsRoutes = require("../../controllers/reservationsController");
+// const amenitiesRoutes = require("../../controllers/amenitiesController");
+// const usersRoutes = require("../../controllers/usersController");
 
 
 // prefix api routes with their specific endpoint name
-router.use("/users", userRoutes);
-router.use("/evalFeedback", evalFeedbackRoutes);//only correct so follow this smaple
-router.use("/infoListing", infoListingRoutes);
-router.use("/amenities", amenitiesRoutes);
-router.use("/property", propertyRoutes);
-router.use("/reservations", reservationsRoutes);
-router.use("/patrons", patronsRoutes);
-router.user("/optionalServices", optionalServicesRoutes);
+// router.use("/users", usersRoutes);
+// router.use("/evalFeedback", evalFeedbackRoutes);//only correct so follow this smaple
+// router.use("/infoListing", infoListingRoutes);
+// router.use("/amenities", amenitiesRoutes);
+// router.use("/property", propertyRoutes);
+// router.use("/reservations", reservationsRoutes);
+// router.use("/patrons", patronsRoutes);
+// router.user("/optionalServices", optionalServicesRoutes);
 
 module.exports = router;
 
