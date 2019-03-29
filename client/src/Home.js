@@ -10,6 +10,7 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import HomeImage from "./images/royal-mirage-dubai1.jpg";
+import { Link } from "react-router-dom";
 
 const styles = theme => ({
   root: {
@@ -44,7 +45,9 @@ class Home extends React.Component {
           <Typography variant="h6" color="inherit" className={classes.grow}>
             HOME AWAY FROM HOME
           </Typography>
+          <Link to="/signup">
           <Button color="inherit">Login</Button>
+          </Link>
         </Toolbar>
       </AppBar>
             <Grid container spacing={24}>
