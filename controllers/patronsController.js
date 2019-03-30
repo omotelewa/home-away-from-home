@@ -3,10 +3,10 @@ module.exports = {
   //select all users
   getAllUser: (req, res) => {
     db
-      .Users
+      .patron
       .findAll()
-      .then(dbPatrons => {
-        res.json(dbPatrons);
+      .then(dbUser => {
+        res.json(dbUser);
 
       })
       .catch(err => {
@@ -22,7 +22,7 @@ module.exports = {
         where: {
           id: req.params.userId
         },
-        include: [db.user,db.property,db.listingInfo,db.reservations]
+        include: [db.user,db.property,db.listingInfo,db.reservations,db.patrons,db.amenities]
       })
       .then(dbuser => {
         res.json(dbuser);
@@ -36,8 +36,8 @@ module.exports = {
   //check if user is logged in
   UserCheck: function (req, res) {
     if (req.patron) {
-      console.log(req.patron);
-      return res.json(req.patron);
+      console.log(req.user);
+      return res.json(req.user);
     } else {
       return res.status(422).json({
         error: "Not logged in!"

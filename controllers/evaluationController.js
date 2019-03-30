@@ -2,50 +2,50 @@
 const db = require("../models");
 //const router = require('express').Router();
 
-module.exports = { //create a reservation 
-  createreservation: (req, res) => {
+module.exports = { //create a Evaluation Feedback
+  createevaluation: (req, res) => {
     db
-      .reservation
+      .evaluation
       .create(req.body)
       .then(result => {
         res.json(result)
       })
       .catch(err => {
-        console.log("reservation Generating  Error: " + err);
+        console.log("evaluation Generating  Error: " + err);
         res.status(400).json(err);
       });
   },
   //select all Comments
-  getAllreservation: (req, res) => {
+  getAllevaluation: (req, res) => {
     db
-      .reservation
+      .evaluation
       .find({
 
       })
 
-      .then(dbRegistration => {
-        res.json(dbreservation);
+      .then(dbevaluation => {
+        res.json(dbevaluation);
       })
       .catch(err => {
         console.log("Select All Error: " + err);
         res.status(400).json(err);
       });
   }, //select all comments by user
-  getAllreservationByPatrons: (req, res) => {
+  getAllevaluationByPatrons: (req, res) => {
     db
-      .reservation
+      .evaluation
       .find({
         userId: req.body.userId
-      }).then(dbreservation => {
-        res.json(dbreservation);
+      }).then(dbevaluation => {
+        res.json(dbevaluation);
       }).catch(err => {
         console.log("Select All Error: " + err);
         res.status(400).json(err);
       });
   },
-  //delete a Reservation
-  deletereservation: (req, res) => {
-    db.reservation
+  //delete a Comment 
+  deleteevaluation: (req, res) => {
+    db.evaluation
       .delete({
         where: {
           userId: req.params.id
@@ -53,13 +53,13 @@ module.exports = { //create a reservation
       }).then(result => {
         res.json(result)
       }).catch(err => {
-        console.log("Delete reservation Error: " + err);
+        console.log("Delete evaluation Error: " + err);
         res.status(400).json(err);
       });
   },
-  //update a reservation
-  updateReservation: (req, res) => {
-    db.reservation
+  //update an evaluation
+  updateEvaluation: (req, res) => {
+    db.evalutation
       .update({
         where: {
           userId: req.params.id
@@ -67,7 +67,7 @@ module.exports = { //create a reservation
       }).then(result => {
         res.json(result)
       }).catch(err => {
-        console.log("Update reservation Error: " + err);
+        console.log("Update evaluation Error: " + err);
         res.status(400).json(err);
       });
   }

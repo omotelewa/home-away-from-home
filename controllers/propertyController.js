@@ -5,7 +5,7 @@ module.exports = {
   //create a Property 
   createProperty: (req, res) => {
     db
-      .Comments
+      .Property
       .create(req.body)
       .then(result => {
         res.json(result)
@@ -30,26 +30,26 @@ module.exports = {
         res.status(400).json(err);
       });
   },
-  //select all comment by review
-  getAllCommentsByReview: (req, res) => {
+  //select all Property by evaluation
+  getAllPropertyByReview: (req, res) => {
     db
-      .Comments
+      .Property
       .findAll({
         where:{
-          ReviewId:req.params.reviewId
+          PropertId:req.params.propertyId
         },
         include: [db.Users]
       })
-      .then(dbComments => {
-        res.json(dbComments);
+      .then(dbevaluation => {
+        res.json(dbevaluation);
       })
       .catch(err => {
         console.log("Select All Error: " + err);
         res.status(400).json(err);
       });
   },
-  //delete a Comment
-  deleteComment: (req, res) => {
+  //delete a property
+  deleteProperty: (req, res) => {
     db
       .Comments
       .destroy({
@@ -60,7 +60,7 @@ module.exports = {
         res.json(result)
       })
       .catch(err => {
-        console.log("Delete Comment Error: " + err);
+        console.log("Delete Property from listing Error: " + err);
         res.status(400).json(err);
       });
   }

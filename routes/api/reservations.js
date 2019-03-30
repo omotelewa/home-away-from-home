@@ -1,11 +1,15 @@
 const router = require("express").Router();
 const resvController = require("../../controllers/reservationController.js");
 
-//todo: make the reservation controller method.
+// match /api/reservation
 
-router.route("/").get(resvController.findAll).post(resvController.create);
+router.route("/")
+.get(resvController.findAll)
+.post(resvController.saveReservation);
+
+// match /api/evaluation/:id
+router.route("/:id")
+.get(resvController.getAllreservationByPatrons)
+.delete(resvController.deletereservation);
 
 module.exports = router;
-
-
-  

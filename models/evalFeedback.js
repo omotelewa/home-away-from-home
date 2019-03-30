@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const evalFeedbackSchema = new Schema({
+const evaluationSchema = new Schema({
   userId: {
     type: Number, require: true
   },
@@ -22,5 +22,5 @@ const evalFeedbackSchema = new Schema({
   }
 });
 
-const evalFeedback = mongoose.model("EvalFeedback", evalFeedbackSchema);
-module.exports = EvalFeedback;
+const evaluation = mongoose.model("evaluation", evaluationSchema);
+module.exports = evaluation;
