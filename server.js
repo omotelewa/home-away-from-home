@@ -28,6 +28,14 @@ if (process.env.NODE_ENV === "production") {
 
 app.use(routes);
 
+mongoose.connect('mongodb://127.0.0.1/homeOwners')
+
+const db = mongoose.connection;
+
+//Bind connection to error event (to get notification of connection errors)
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
+
 app.listen(PORT, function() {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
 });

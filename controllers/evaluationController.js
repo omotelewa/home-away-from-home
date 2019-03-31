@@ -1,5 +1,5 @@
 //import models dependency
-const db = require("../models");
+const db = require("../models/");
 //const router = require('express').Router();
 
 module.exports = { //create a Evaluation Feedback
@@ -43,7 +43,7 @@ module.exports = { //create a Evaluation Feedback
         res.status(400).json(err);
       });
   },
-  //delete a Comment 
+  //delete a Comment
   deleteevaluation: (req, res) => {
     db.evaluation
       .delete({
