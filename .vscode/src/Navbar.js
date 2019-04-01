@@ -1,23 +1,17 @@
 import React from "react";
-import { Navbar, Form, FormControl, Button } from "react-bootstrap";
 import "./Navbar.css";
-import Login from "../Login";
-import Signup from "../Signup";
 
-const MainNavbar = () => (
-
-  <Navbar variant="dark" className="fixed-top d-flex">
-    <Navbar.Brand href="/" className="flex-shrink-0">Home Away From Home</Navbar.Brand>
-      <Button variant="info" className="flex-shrink-0">Your Home/Condo</Button>
-      <Button variant="info" className="flex-shrink-0">Get More Info</Button>
-      <Login />
-      <Signup />
-      <Form inline>
-        <FormControl type="text" placeholder="Search" className="mr-sm-2 flex-shrink-0" />
-        <Button variant="outline-info"  className="flex-shrink-0">Search</Button>
-      </Form>
-  </Navbar>
-
+const Navbar = () => (
+  <nav>
+    <div className="nav-wrapper">
+      <a href="#!" className="brand-logo">Logo</a>
+      <ul className="right hide-on-med-and-down">
+        <li><a className="waves-effect waves-light btn">Button</a></li>
+        <li><a className="waves-effect waves-light btn">Button <i className="material-icons right">cloud</i></a></li>
+        <li><a className="waves-effect waves-light btn-large">Large Button</a></li>
+      </ul>
+    </div>
+  </nav>
 )
 
-export default MainNavbar;
+export default Navbar;
