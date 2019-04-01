@@ -1,5 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import './App.css';
+<<<<<<< HEAD
 import Home  from "./Home";
 import {Toolbar , Typography, Button} from '@material-ui/core'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -13,10 +15,16 @@ const toolbarTitle = {
   textAlign:'left'
 }
 
+=======
+import MainNavbar from "./components/Navbar";
+import Home from "./pages/Home";
+import Beach from "./pages/Beach";
+import Snow from "./pages/Snow";
+>>>>>>> 396718107b3888e0029c86a9709532013e003d3f
 
-class App extends Component {
-  render() {
+const App = () => {
     return (
+<<<<<<< HEAD
       <Router>
         <div className="App">
           <Toolbar>
@@ -53,6 +61,19 @@ class App extends Component {
 
     )
   }
+=======
+      <div className="App">
+        <MainNavbar />
+        <Router >
+          <Switch >
+            <Route exact path="/" component={Home} />
+            <Route exact path="/beach" component={Beach} />
+            <Route exact path="/snow" component={Snow} />
+          </Switch>
+        </Router>
+      </div>
+    );
+>>>>>>> 396718107b3888e0029c86a9709532013e003d3f
 }
 
 
