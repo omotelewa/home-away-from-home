@@ -1,67 +1,56 @@
-import mongoose from 'mongoose';
-import crypto from 'crypto';
-const Schema = mongoose.Schema;
+const bcryptjs = require('bcryptjs');
 
-const userSchema = new Schema({
-	name: {
-		type: String,
-		trim: true,
-		required: 'User Name is required'
-	},
-	email: {
-		type: String,
-		trim: true,
-		unique: 'Email already exists',
-		match: [/.+\@.+\..+/, 'Please fill a valid email address'],
-		required: 'Email is required'
-	},
-	hashedPassword: {
-		type: String,
-		required: 'Password is required'
-	},
-	salt: {
-		type: String
-	}
-});
+module.exports = function (sequelize, DataTypes) {
 
-userSchema
-	.virtual('password')
-	.set(function(password) {
-		this._password = password;
-		this.salt = this.makeSalt();
-		this.hashedPassword = this.encryptedPassword(password);
-	})
-	.get(function() {
-		return this._password;
-	});
+  const Users = sequelize.define('Users', {
+    first_name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    last_name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    full_name: {
+      type: DataTypes.STRING,
+    },
+    username: {
+      type: DataTypes.STRING,
+      unique: true
+    },
+    // The email cannot be null, and must be a proper email before creation
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      validate: {
+        isEmail: true
+      }
+    },
+    // The password cannot be null
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false
+    }
+  });
 
-userSchema.methods = {
-	authenticate: function(plainText) {
-		return this.encryptedPassword(plainText) === this.hashedPassword;
-	},
-	encryptedPassword: function(password) {
-		if (!password) return '';
-		try {
-			return crypto
-				.createHmac('sha1', this.salt)
-				.update(password)
-				.digest('hex');
-		} catch (err) {
-			return '';
-		}
-	},
-	makeSalt: function() {
-		return Math.round(new Date().valueOf() * Math.random()) + '';
-	}
+  // Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
+  Users.prototype.validPassword = function (password) {
+    return bcryptjs.compareSync(password, this.password);
+  };
+
+  // Hooks are automatic methods that run during various phases of the User Model lifecycle
+  // In this case, before a User is created, we will automatically hash their password
+  Users.hook("beforeCreate", function (user) {
+    user.full_name = `${user.first_name} ${user.last_name}`;
+    user.username = user.full_name.toLowerCase().replace(/\s/g, '');
+    user.password = bcryptjs.hashSync(user.password, bcryptjs.genSaltSync(10), null);
+    console.log(user);
+  });
+
+  Users.associate = function (models) {
+    models.Users.hasMany(models.Posts);
+  }
+
+  return Users;
 };
-
-userSchema.path('hashedPassword').validate(function(v) {
-	if (this.hashedPassword && this._password.length < 6) {
-		this.invalidate('password', 'Password must be at least 6 characters long.');
-	}
-	if (this.isNew && !this._password) {
-		this.invalidate('password', 'Password is required.');
-	}
-}, null);
-
-export default mongoose.model('User', userSchema)
