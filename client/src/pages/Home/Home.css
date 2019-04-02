@@ -1,0 +1,85 @@
+body {
+  background-image: url("/assets/images/escondido.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: sans-serif;
+}
+
+body::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+p {
+  text-align: justify;
+  background-color: #fff;
+  opacity: .75;
+  width: 60%;
+  padding: 5%;
+  margin: 10% auto;
+  box-shadow: 0px 0px 10px black;
+}
+
+h1 {
+  font-family: cursive, sans-serif;
+}
+
+.homeDiv {
+  margin: 10% 0 70% 0;
+}
+
+.top-image {
+  margin: 10% auto 10% 5%;
+  width: 50%;
+  height: 40vh;
+  background-image: url("/assets/images/casa.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid white;
+  border-radius: 12px;
+  background-size: cover;
+  box-shadow: 2px 2px 10px black;
+  transition: width .5s, height .5s, box-shadow 1s;
+  transition-timing-function: linear;
+}
+
+.top-image:active {
+  transform: scale(.90);
+}
+
+.bottom-image:active {
+  transform: scale(.90);
+}
+
+.top-image:hover {
+  width:58%;
+  height: 43vh;
+  box-shadow: 10px 10px 10px black;
+}
+
+.bottom-image:hover {
+  width:58%;
+  height: 43vh;
+  box-shadow: 10px 10px 10px black;
+}
+
+.bottom-image {
+  margin: 10% 5% 10% auto;
+  width: 50%;
+  height: 40vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("/assets/images/Chamonix+banner+2.jpg");
+  border: 1px solid white;
+  border-radius: 12px;
+  background-size: cover;
+  box-shadow: 2px 2px 10px black;
+  transition: width 1s, height 1s, box-shadow 2s;
+  transition-timing-function: linear;
+}
+
+.container {
+  width: 90%;
+}

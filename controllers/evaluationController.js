@@ -3,7 +3,7 @@ const db = require("../models/");
 //const router = require('express').Router();
 
 module.exports = { //create a Evaluation Feedback
-  createevaluation: (req, res) => {
+  saveEvaluation: (req, res) => {
     db
       .evaluation
       .create(req.body)
@@ -19,10 +19,7 @@ module.exports = { //create a Evaluation Feedback
   getAllevaluation: (req, res) => {
     db
       .evaluation
-      .find({
-
-      })
-
+      .findAll({})
       .then(dbevaluation => {
         res.json(dbevaluation);
       })
@@ -44,7 +41,7 @@ module.exports = { //create a Evaluation Feedback
       });
   },
   //delete a Comment
-  deleteevaluation: (req, res) => {
+  deleteEvaluation: (req, res) => {
     db.evaluation
       .delete({
         where: {
