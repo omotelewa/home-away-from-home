@@ -19,17 +19,29 @@ module.exports = {
   getAllProperty: (req, res) => {
     db
       .Property
-      .findAll({
-        include: [db.property, db.patrons]
-      })
-      .then(dbComments => {
-        res.json(dbComments);
+      .find({})
+      .then(dbProperties => {
+        console.log("dbProperties", dbProperties);
+        res.json(dbProperties);
       })
       .catch(err => {
         console.log("Select All Error: " + err);
         res.status(400).json(err);
       });
   },
+  //   db
+  //     .Property
+  //     .find({
+  //       include: [db.Property, db.patrons]
+  //     })
+  //     .then(dbProperties => {
+  //       res.json(dbProperties);
+  //     })
+  //     .catch(err => {
+  //       console.log("Select All Error: " + err);
+  //       res.status(400).json(err);
+  //     });
+  // },
   //select all Property by evaluation
   getAllPropertyByReview: (req, res) => {
     db
@@ -48,7 +60,7 @@ module.exports = {
         res.status(400).json(err);
       });
   },
-  //delete a property
+  //delete a Property
   deleteProperty: (req, res) => {
     db
       .Comments
