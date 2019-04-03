@@ -25,6 +25,7 @@
   "dependencies": {
     "cloudinary": "^1.14.0",
     "concurrently": "^4.1.0",
+    "create-react-class": "^15.6.3",
     "express": "^4.16.4",
     "if-env": "^1.0.4",
     "material-ui": "^0.20.2",
@@ -32,6 +33,7 @@
     "mongo": "^0.1.0",
     "mongoose": "^5.4.19",
     "passport": "^0.4.0",
+    "react-datepicker": "^2.3.0",
     "typeface-roboto": "0.0.54"
   }
 }

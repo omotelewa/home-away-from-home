@@ -25,6 +25,7 @@ class Login extends React.Component {
   render() {
     return (
       <>
+     
         <Button variant="info" onClick={this.handleShow}>
           Login
         </Button>
@@ -59,8 +60,8 @@ class Login extends React.Component {
           </Modal.Footer>
             </Form>
         </Modal>
-      </>
-    );
+        </>
+          );
   }
 }
 
