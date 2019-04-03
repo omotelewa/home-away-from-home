@@ -28,13 +28,11 @@ if (process.env.NODE_ENV === "production") {
 
 app.use(routes);
 
-mongoose.connect('mongodb://127.0.0.1/homeOwners')
+// If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/HomeAwayFromHome_DB";
 
-const db = mongoose.connection;
-
-//Bind connection to error event (to get notification of connection errors)
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-
+// Connect to the Mongo DB
+mongoose.connect(MONGODB_URI);
 
 app.listen(PORT, function() {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
