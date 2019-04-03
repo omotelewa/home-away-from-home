@@ -29,7 +29,7 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/HomeAwayFromHome_DB";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/HomeAwayFromHome_db";
 
 // Connect to the Mongo DB
 mongoose.connect(MONGODB_URI);
