@@ -4,7 +4,7 @@ const propertyController = require("../../controllers/propertyController");
 // match /api/properties
 router.route("/")
 .get(propertyController.getAllProperty)
-// .post(propertyController.saveReservation);
+.post(propertyController.createProperty);
 
 // match /api/properties/:id
 // router.route("/:id")

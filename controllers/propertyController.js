@@ -19,7 +19,7 @@ module.exports = {
   getAllProperty: (req, res) => {
     db
       .Property
-      .find({})
+      .find(req.body)
       .then(dbProperties => {
         console.log("dbProperties", dbProperties);
         res.json(dbProperties);
