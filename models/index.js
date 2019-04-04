@@ -1,6 +1,4 @@
-const evaluation = require('./evalFeedback')
-
+// collect other models and export
 module.exports = {
-  evaluation
-  // property, ...
+  Property: require('./property.js')
 };

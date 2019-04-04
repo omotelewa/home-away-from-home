@@ -1,13 +1,12 @@
 const router = require("express").Router();
 const userController = require("../../controllers/usersController");
-const passport = require("../../utils/middleware/passport-local");
+// const passport = require('../../utils/middleware/passport-local');
 
 //method to handle user authentication login status and logout
 router.route("/status").get(userController.userCheck);
 
-router
-  .route("/login")
-  .post(passport.authenticate("local"), userController.login);
+router.route("/login");
+// .post(passport.authenticate('local'), userController.login);
 
 router.route("/logout").get((req, res) => {
   req.logout();
