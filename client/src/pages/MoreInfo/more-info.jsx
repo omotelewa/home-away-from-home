@@ -1,38 +1,11 @@
 import React from "react";
-import "./Beach.css";
-import ReservationForm from "../../components/Forms/registration-form";
 
-class Beach extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      arrivalDate: "",
-      departureDate: ""
-    };
-  }
-
-  handleArrivalDateChange = date => {
-    this.setState({
-      arrivalDate: date
-    });
-  };
-
-  handleDepartureDateChange = date => {
-    this.setState({
-      departureDate: date
-    });
-  };
-
-  handleFormSubmit = formData => {
-    // todo: add logic
-  };
-
+class MoreInfo extends React.Component {
   render() {
     return (
       <div className="beachDiv">
         <div className="container">
-          <h1 className="header">Beach Houses</h1>
+          <h1 className="header">More Info</h1>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
             Laboriosam, corrupti quo repellendus alias deleniti nostrum
@@ -42,10 +15,9 @@ class Beach extends React.Component {
             beatae assumenda velit voluptas alias?
           </p>
         </div>
-        <ReservationForm />
       </div>
     );
   }
 }
 
-export default Beach;
+export default MoreInfo;
