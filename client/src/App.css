@@ -31,3 +31,15 @@
     transform: rotate(360deg);
   }
 }
+
+.res-form {
+  background-color: bisque;
+  width: 40%;
+  display: block;
+  margin: auto;
+  padding: 5%;
+}
+
+.res-form .form-label {
+  display: block;
+}
