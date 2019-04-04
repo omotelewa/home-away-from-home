@@ -1,24 +1,19 @@
 const router = require("express").Router();
-const userController = require("../../controllers/userController");
-const passport = require('../../utils/middleware/passport-local');
+const userController = require("../../controllers/usersController");
+// const passport = require('../../utils/middleware/passport-local');
 
 //method to handle user authentication login status and logout
-router
-  .route("/status")
-  .get(userController.userCheck);
+router.route("/status").get(userController.userCheck);
 
-router
-  .route("/login")
-  .post(passport.authenticate('local'), userController.login);
+router.route("/login");
+// .post(passport.authenticate('local'), userController.login);
 
-router
-  .route("/logout")
-  .get((req, res) => {
-    req.logout();
-    res.redirect('/');
-  });
+router.route("/logout").get((req, res) => {
+  req.logout();
+  res.redirect("/");
+});
 
-// methods for /api/user (GET and POST) 
+// methods for /api/user (GET and POST)
 router
   .route("/")
   .get(userController.getAllUsers)
@@ -32,8 +27,8 @@ router
   .delete(userController.deleteUser);
 
 //method to change user password
-  router
+router
   .route("/changePassword/:id")
-  .put(Middleware,userController.changePassword)
+  .put(Middleware, userController.changePassword);
 
 module.exports = router;

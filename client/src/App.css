@@ -31,3 +31,16 @@
     transform: rotate(360deg);
   }
 }
+
+.res-form {
+  background-color: white;
+  box-shadow: 0px 0px 10px black;
+  width: 40%;
+  display: block;
+  margin: auto;
+  padding: 5%;
+}
+
+.res-form .form-label {
+  display: block;
+}

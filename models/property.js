@@ -2,28 +2,16 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const propertySchema = new Schema({
-   propertyId: {
-    type: Number, required: true
-  },
-  location: {
-    type: String, required: true
-  },
-  regular: {
-    type: String, required: true
-  },
-  luxury: {
-    type: String, required: true
-  },
-  interational: {
-    type: String, required: true
-  },
-  island: {
-    type: String, required: true
-  },
-  landAndSea: {
-    type: String, required: true
-  }
+  propertyId: { type: Number, require: true},
+  name: { type: String},
+  location: { type: String},
+  amenities: { type: String},
+  classification: { type: String},
+  minimum_stay: { type: String},
+  pricing: { type: String},
+  rental_agreement: { type: String},
+  season: { type: String}
 });
 
 const property = mongoose.model("Property", propertySchema);
-module.exports = Properties;
+module.exports = property;
