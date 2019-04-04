@@ -1,8 +1,6 @@
 import React from "react";
 import "./Beach.css";
-import { Form, Button } from "react-bootstrap";
-import DatePicker from "react-datepicker";
-import "../../../node_modules/react-datepicker/src/stylesheets/datepicker-cssmodules.scss";
+import ReservationForm from "../../components/Forms/registration-form";
 
 class Beach extends React.Component {
   constructor(props) {
@@ -44,44 +42,7 @@ class Beach extends React.Component {
             beatae assumenda velit voluptas alias?
           </p>
         </div>
-        <div className="res-form">
-          <h3>Book this space</h3>
-          <Form>
-            <Form.Group controlId="arrival">
-              <Form.Label>Arrival Date</Form.Label>
-              <DatePicker
-                selected={this.state.arrivalDate}
-                onChange={this.handleArrivalDateChange}
-                placeholderText="Select arrival date"
-              />
-            </Form.Group>
-            <Form.Group controlId="departure">
-              <Form.Label>Departure Date</Form.Label>
-              <DatePicker
-                selected={this.state.departureDate}
-                onChange={this.handleDepartureDateChange}
-                placeholderText="Select departure date"
-              />
-            </Form.Group>
-            <Form.Group controlId="exampleForm.ControlSelect1">
-              <Form.Label>Number of Guests</Form.Label>
-              <Form.Control as="select">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </Form.Control>
-            </Form.Group>
-            <Button
-              variant="primary"
-              type="submit"
-              onClick={this.handleFormSubmit}
-            >
-              Reserve my spot
-            </Button>
-          </Form>
-        </div>
+        <ReservationForm />
       </div>
     );
   }
