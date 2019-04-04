@@ -1,51 +1,79 @@
-const db=require("../models");
-module.exports = {
-  //select all users
-  getAllUser: (req, res) => {
-    db
-      .Users
-      .findAll()
-      .then(dbPatrons => {
-        res.json(dbPatrons);
+const db = require('../models');
 
-      })
-      .catch(err => {
-        console.log("Select All Error: " + err);
-        res.status(400).json(err);
-      });
-  },
-  //select a user activities
-  getdbUsersActivities: (req, res) => {
+module.exports = {
+  findAll: function(req, res) {
     db
       .Users
       .findAll({
-        where: {
-          id: req.params.userId
-        },
-        include: [db.user,db.property,db.listingInfo,db.reservations]
+        attributes: ["id", "first_name", "last_name", "full_name", "user_name"]
       })
-      .then(dbuser => {
-        res.json(dbuser);
-
-      })
+      .then(dbUsers => res.json(dbUsers))
       .catch(err => {
-        console.log("Select All Error: " + err);
-        res.status(400).json(err);
+        console.log(err);
+        res.status(500).json(err);
       });
   },
-  //check if user is logged in
-  UserCheck: function (req, res) {
-    if (req.patron) {
-      console.log(req.patron);
-      return res.json(req.patron);
-    } else {
-      return res.status(422).json({
-        error: "Not logged in!"
+  findByName: function (req, res) {
+    db
+      .Users
+      .findOne({
+        attributes: ["id", "first_name", "last_name", "full_name", "user_name"],
+        where: {
+          username: req.params.username
+        },
+        include: [db.Posts]
       })
+      .then(dbUsers => res.json(dbUsers))
+      .catch(err => {
+        console.log(err);
+        res.status(404).json(err);
+      });
+  },
+  userCheck: function(req, res) {
+    if (req.user) {
+      return res.json(req.user);
+    }
+    else {
+      return res.status(422).json({error: "Not logged in!"})
     }
   },
-  //add a patron where we will make use of 
-  register: function (req, res) {
+  update: function (req, res) {
+    db
+      .Users
+      .update(req.body, {
+        where: {
+          username: req.params.username
+        }
+      })
+      .then(dbUsers => res.json(dbUsers))
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  },
+  delete: function (req, res) {
+    db
+      .Users
+      .destroy({
+        where: {
+          username: req.params.username
+        }
+      })
+      .then(dbUsers => res.json(dbUsers))
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  },
+  register: function(req, res) {
+    /* 
+      req.body => {
+        first_name: "Alex",
+        last_name: "Rosenkranz",
+        email: "alex@alex.com",
+        password: "123456"
+      }
+    */
     db
       .Users
       .create(req.body)
@@ -70,63 +98,8 @@ module.exports = {
           .json(err);
       });
   },
-  login: function (req, res) {
+  login: function(req, res) {
     console.log(req.user);
-    res.json("Logged In");
-  },
-
-  //update a user /:id
-  changePassword: (req, res) => {
-    // console.log(req.body);
-    db.Users.update({
-        password: req.body.password
-      }, {
-        where: {
-          id: req.params.id
-        }
-      }).then(result => {
-        res.json(result)
-      })
-      .catch(err => {
-        console.log("Change Password Error: " + err);
-        res.status(400).json(err);
-      });
-
-  },
-  //update a user /:id
-  updateAccount: (req, res) => {
-   // console.log(req.body);
-    db.Users.update(req.body, {
-        where: {
-          id: req.params.id
-        }
-      }).then(result => {
-        return db.Users.findById(req.params.id)
-      })
-      .then(result => {
-        console.log(result);
-       // req.user.photo = results.photo;
-        res.json(result);
-      })
-      .catch(err => {
-        console.log("Change Password Error: " + err);
-        res.status(400).json(err);
-      });
-  },
-
-  //delete a user
-  deleteUser: (req, res) => {
-    db.Users.destroy({
-        where: {
-          id: req.params.id
-        }
-      }).then(result => {
-        res.json(result)
-      })
-      .catch(err => {
-        console.log("Delete Error: " + err);
-        res.status(400).json(err);
-      });
-
+    res.json("/");
   }
 }

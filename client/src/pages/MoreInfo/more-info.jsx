@@ -1,19 +1,17 @@
 import React from "react";
+import PropertyTable from "../../components/PropertyTable"
+import { white } from "material-ui/styles/colors";
 
 class MoreInfo extends React.Component {
   render() {
     return (
-      <div className="beachDiv">
+      <div className="infoDiv">
         <div className="container">
           <h1 className="header">More Info</h1>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Laboriosam, corrupti quo repellendus alias deleniti nostrum
-            accusamus nihil a! Non eos, quidem sequi necessitatibus eius nobis,
-            excepturi unde repellendus quisquam odit aut dolorum ut assumenda?
-            Fuga sint quae saepe cum quas minima aut numquam. Illum, recusandae
-            beatae assumenda velit voluptas alias?
-          </p>
+          <div style={{background: "white", borderRadius: "12px", boxShadow: "10px 10px 10px black", padding: "0 2%", opacity: ".8"}}>
+
+         <PropertyTable />
+          </div>
         </div>
       </div>
     );

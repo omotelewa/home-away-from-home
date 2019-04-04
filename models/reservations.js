@@ -8,6 +8,7 @@ const reservationSchema = new Schema({
   propertyId: {
     type: Number, required: true
   },
+  
   arrivalDate: {
     type: Date, required: true
   },
@@ -15,8 +16,12 @@ const reservationSchema = new Schema({
     type: Date, required: true
   },
   paymentType: {
-    type: Boolean, required: true
+    type: Boolean
+  },
+  numberOfGuests: {
+    type: Number, required: true
   }
+
 });
 
 const Reservation = mongoose.model("Reservation", reservationSchema);

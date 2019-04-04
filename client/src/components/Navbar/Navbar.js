@@ -9,9 +9,9 @@ const MainNavbar = () => (
     <Navbar.Brand href="/" className="flex-shrink-0">
       Home Away From Home
     </Navbar.Brand>
-    <Button href="/your-home" variant="info" className="flex-shrink-0">
+    {/* <Button href="/your-home" variant="info" className="flex-shrink-0">
       Your Home/Condo
-    </Button>
+    </Button> */}
     <Button href="/more-info" variant="info" className="flex-shrink-0">
       Get More Info
     </Button>

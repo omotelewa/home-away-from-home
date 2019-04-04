@@ -31,7 +31,7 @@ class ReservationForm extends React.Component {
 
   render() {
     return (
-      <div className="res-form">
+      <div className="res-form" style={{opacity: ".75"}}>
         <h3>Book this space</h3>
         <Form>
           <Form.Group controlId="arrival">

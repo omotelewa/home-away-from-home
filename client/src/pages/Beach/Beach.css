@@ -7,6 +7,15 @@
   font-family: sans-serif;
 }
 
+.infoDiv {
+  padding: 10% 0 80% 0;
+  background-image: url("/assets/images/officeBackground.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: sans-serif;
+}
+
 p {
   text-align: justify;
   background-color: #fff;
