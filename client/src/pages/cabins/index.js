@@ -1,1 +1,1 @@
-export { default } from "./Snow";
+export { default } from "./cabins";

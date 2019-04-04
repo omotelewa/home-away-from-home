@@ -1,8 +1,7 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+var mongoose = require("mongoose");
+var Schema = mongoose.Schema;
 
-const propertySchema = new Schema({
-  propertyId: { type: Number, require: true},
+var propertySchema = new Schema({
   name: { type: String},
   location: { type: String},
   amenities: { type: String},
@@ -13,5 +12,5 @@ const propertySchema = new Schema({
   season: { type: String}
 });
 
-const property = mongoose.model("Property", propertySchema);
+var property = mongoose.model("Property", propertySchema);
 module.exports = property;

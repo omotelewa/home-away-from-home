@@ -4,11 +4,11 @@ import Table from 'react-bootstrap/Table'
 import API from "../../utils/API";
 
 
-
 class PropertyTable extends Component {
 
   state = {
-    PropertyList: []
+    PropertyList: [],
+    color: false
   };
 
   componentDidMount() {
@@ -21,6 +21,12 @@ class PropertyTable extends Component {
       .catch(err => console.log(err));
   };
 
+  handleRowColor = () => {
+    this.state.color
+      ? this.setState({ color: false })
+      : this.setState({ color: true })
+  };
+
   render() {
     return (
       <React.Fragment>
@@ -28,34 +34,26 @@ class PropertyTable extends Component {
           ? ""
           : (
             <React.Fragment>
-              <br />
+              <hr />
               <Table striped hover size="sm">
                 <thead className="thead-dark">
                   <tr>
-                    <th>#</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Username</th>
+                    <th>Name</th>
+                    <th>Location</th>
+                    <th>Amenities</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr className="table-info">
-                    <td>2</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td colSpan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                  </tr>
+                  {this.state.PropertyList.map(property => {
+                    return (
+
+                      <tr>
+                        <td>{property.name}</td>
+                        <td>{property.location}</td>
+                        <td>{property.amenities}</td>
+                      </tr>
+                    )
+                  })}
                 </tbody>
               </Table>
             </React.Fragment>
