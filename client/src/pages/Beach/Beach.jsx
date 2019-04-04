@@ -26,6 +26,10 @@ class Beach extends React.Component {
     });
   };
 
+  handleFormSubmit = formData => {
+    // todo: add logic
+  };
+
   render() {
     return (
       <div className="beachDiv">
@@ -56,7 +60,21 @@ class Beach extends React.Component {
                 onChange={this.handleDepartureDateChange}
               />
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Form.Group controlId="exampleForm.ControlSelect1">
+              <Form.Label>Number of Guests</Form.Label>
+              <Form.Control as="select">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </Form.Control>
+            </Form.Group>
+            <Button
+              variant="primary"
+              type="submit"
+              onClick={this.handleFormSubmit}
+            >
               Reserve my spot
             </Button>
           </Form>
