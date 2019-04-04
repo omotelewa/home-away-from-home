@@ -45,12 +45,14 @@ class Beach extends React.Component {
           </p>
         </div>
         <div className="res-form">
+          <h3>Book this space</h3>
           <Form>
             <Form.Group controlId="arrival">
               <Form.Label>Arrival Date</Form.Label>
               <DatePicker
                 selected={this.state.arrivalDate}
                 onChange={this.handleArrivalDateChange}
+                placeholderText="Select arrival date"
               />
             </Form.Group>
             <Form.Group controlId="departure">
@@ -58,6 +60,7 @@ class Beach extends React.Component {
               <DatePicker
                 selected={this.state.departureDate}
                 onChange={this.handleDepartureDateChange}
+                placeholderText="Select departure date"
               />
             </Form.Group>
             <Form.Group controlId="exampleForm.ControlSelect1">
