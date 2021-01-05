@@ -24,7 +24,7 @@
   "homepage": "https://github.com/omotelewa/home-away-from-home#readme",
   "dependencies": {
     "cloudinary": "^1.14.0",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "concurrently": "^4.1.0",
     "create-react-class": "^15.6.3",
     "express": "^4.16.4",
